@@ -1,0 +1,144 @@
+:root {
+  --primary: #1e293b;
+  --secondary: #6366f1;
+  --bg: #f1f5f9;
+  --text: #334155;
+  --white: #ffffff;
+  --gray: #64748b;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+header {
+  background: linear-gradient(135deg, var(--secondary), #3b82f6);
+  color: var(--white);
+  text-align: center;
+  padding: 60px 20px 40px;
+  animation: fadeDown 1s ease-out;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.intro {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  animation: fadeUp 1.2s ease-out;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px var(--shadow);
+  padding: 30px 25px;
+  width: 300px;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInScale 0.8s ease forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.3s; }
+.card:nth-child(2) { animation-delay: 0.5s; }
+.card:nth-child(3) { animation-delay: 0.7s; }
+.card:nth-child(4) { animation-delay: 0.9s; }
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+@media (max-width: 700px) {
+  .card {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
